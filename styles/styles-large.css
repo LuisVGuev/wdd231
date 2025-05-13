@@ -1,6 +1,5 @@
 /* mobile.css */
-
-/* Tablets y pantallas medianas */
+/* Tablets */
 @media (max-width: 768px) {
   .nav-menu {
     flex-direction: column;

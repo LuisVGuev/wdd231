@@ -1,5 +1,5 @@
 // OpenWeatherMap API
-const apiKey = 'your_api_key_here'; 
+const apiKey = 'api_key_here'; 
 const city = 'São Paulo';
 const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -21,7 +21,7 @@ async function getWeather() {
   }
 }
 
-// Wind Chill Calculation
+// Calculation
 function calculateWindChill(temp, wind) {
   if (temp <= 10 && wind > 4.8) {
     return (
