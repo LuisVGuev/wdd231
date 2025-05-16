@@ -2,92 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Welcome to the Timbuktu Chamber of Commerce. Supporting local business and community.">
-  <title>Timbuktu Chamber of Commerce</title>
-
-  <!-- CSS principal -->
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/styles-large.css" />
-
-  <!-- JS script -->
-  <script src="scripts/jscript.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luis Veliz course home page for WDD 231." />
+  <meta name="author" content="Luis Ramoin Veliz" />
+  <title>Luis Veliz - WDD 231</title>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 640px)" />
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Timbuktu Chamber of Commerce</h1>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
+    <img src="images/profile.jpg" alt="Luis Veliz" />
+    <span>Luis Veliz</span>
+    <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
   </header>
 
+  <nav id="main-nav">
+    <a href="#" class="active">Home</a>
+    <a href="#">Chamber</a>
+    <a href="#">Final</a>
+    <a href="https://github.com/LuisVGuev">GitHub Profile</a>
+    <a href="https://www.linkedin.com/in/luis-ram%C3%B3n-veliz/">LinkedIn</a>
+  </nav>
+
   <main>
-    <section class="hero">
-      <h2>Connecting Local Businesses & the Community</h2>
-      <p>Discover events, business resources, and community initiatives happening in Timbuktu.</p>
-      <a href="join.html" class="btn">Join the Chamber</a>
+    <h1>Home</h1>
+
+    <section>
+      <h2>Course Work</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </section>
 
-    
-    <div class="business-gallery">
-            <!-- card business Gallery ecommerce -->
-             
-    </div>
+    <section>
+      <h2>São Paulo, Brasil</h2>
+      <img src="images/São-paulo.jpg" alt="Brasil" />
+      <p>Brasil</p>
+    </section>
 
-  <div class="info-section">
-  <div class="Events-place">
-    <h3>Events Timbuktu</h3>
-    <article>
-      <h4>Follow:</h4>
-      <p>- 500-meter race for ages 30 to 50.
-      June 4, 2025</p>
-      <p>- Fabric exhibition on June 5, 2025</p>
-    </article>
-  </div>
-
-    <div class="overlay-container">
-  <!-- Weather Overlay -->
-  <div class="overlay weather-overlay">
-    <h3>Weather in Brazil</h3>
-    <p id="city-name">São Paulo</p>
-    <p id="temperature">Temperature: <span id="temp-value">--</span></p>
-    <p id="windspeed">Wind Speed: <span id="wind-value">--</span></p>
-    <p id="windchill">Windchill: <span id="windchill-result">--</span></p>
-  </div>
-
-  <!-- Country Data Overlay -->
-  <div class="overlay country-overlay">
-    <h3>Brazil Data</h3>
-    <p><strong>Area:</strong> 8,515,767 km²</p>
-    <p><strong>Population:</strong> 214 million</p>
-    <p><strong>Language:</strong> Portuguese</p>
-    <p><strong>Capital:</strong> Brasília</p>
-  </div>
-</div>
-
-
+    <section>
+      <h2>Web and Computer Programming Certificate</h2>
+      <div>
+        <button data-filter="all">All</button>
+        <button data-filter="CSE">CSE</button>
+        <button data-filter="WDD">WDD</button>
+      </div>
+      <div id="course-container"></div>
+      <p>Total Credits: <span id="total-credits">0</span></p>
+    </section>
   </main>
 
-
   <footer>
-   <a href="https://www.linkedin.com" id="linked-button" class="linked-button" target="_blank">
-    <img src="images/linked.png" alt="LinkedIn" class="linked-button">
-</a>
-<a href="https://www.youtube.com" id="youtube-button" class="youtube-button" target="_blank">
-    <img src="images/youtube.png" alt="YouTube" class="youtube-button">
-</a>
-<a href="https://twitter.com/" id="twitter-button" class="twitter-button" target="_blank">
-    <img src="images/twitter.png" alt="Twitter" class="twitter-button">
-</a>
-    <p>&copy; <span id="year"></span> Luis Ramon Veliz, Brazil</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="currentyear"></span> Luis Ramoin Veliz, Brasil</p>
+    <p id="lastModified"></p>
   </footer>
 </body>
 </html>
+
