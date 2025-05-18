@@ -35,4 +35,4 @@ document.querySelectorAll("section button[data-filter]").forEach(btn => {
   });
 });
 
-renderCourses(); // initial load
+renderCourses(); 
