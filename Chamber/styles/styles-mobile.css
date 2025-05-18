@@ -1,0 +1,127 @@
+/* ======================
+   Mobile & Tablet Styles
+   Targeting devices up to 768px
+====================== */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Events-place,
+  .overlay {
+    width: 90%;
+  }
+
+
+  #memberContainer.grid-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .member-card {
+    max-width: 90%;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .member-card img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .member-card h3 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+
+  .member-card p {
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+  }
+
+  .member-card a {
+    color: #0077cc;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  .member-card a:hover {
+    text-decoration: underline;
+  }
+
+
+  .list-view .member-card {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+ 
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  footer img {
+    width: 36px;
+    height: 36px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
