@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Welcome to the Taboão  Chamber of Commerce. Supporting local business and community.">
   <meta name="author" content="Luis Ramon Veliz" />
+
   <title>Taboão Chamber of Commerce</title>
+
+  <!-- Facebook Open Graph Meta Tags -->
   <meta property="og:title" content="Taboão  Chamber of Commerce">
   <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão .">
   <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg">
@@ -16,9 +19,9 @@
 
   <!-- CSS Styles -->
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/styles-large.css" />
   <link rel="stylesheet" href="styles/styles-mobile.css" />
-  
+  <link rel="stylesheet" href="styles/styles-large.css" />
+
   <!-- JavaScript -->
   <script src="scripts/jscript.js" defer></script>
 </head>
@@ -28,25 +31,32 @@
     <div class="container">
       <h1>Taboão  Chamber of Commerce</h1>
       <nav>
-  <ul class="nav-menu" id="nav-menu"> 
-    <li><a href="index.html">Home</a></li>
-    <li><a href="discover.html">Discover</a></li>
-    <li><a href="directory.html">Directory</a></li>
-    <li><a href="join.html">Join</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
-</nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
+    <section class="hero">
+      <h2>Connecting Local Businesses & the Community</h2>
+      <p>Discover events, business resources, and community initiatives happening in Taboão .</p>
+      <a href="join.html" class="btn">Join the Chamber</a>
+    </section>
 
     <!-- View Toggle Buttons -->
-    <<div class="view-toggle">
-  <button id="toggleView">Switch to List View</button> 
-</div>
+    <div class="view-toggle">
+      <button onclick="toggleView('grid')">Grid View</button>
+      <button onclick="toggleView('list')">List View</button>
+    </div>
+
     <!-- Member Directory Container -->
     <div id="memberContainer" class="grid-view">
+      <!-- Member cards will be injected here via JS -->
     </div>
 
     <div class="info-section">
