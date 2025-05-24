@@ -111,3 +111,14 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* identification course */
+.completed {
+  background-color: #4caf50 !important;
+  color: white;
+}
+
+.incomplete {
+  background-color: #f44336 !important; 
+  color: white;
+}
