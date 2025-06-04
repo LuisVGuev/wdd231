@@ -3,51 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to the Taboão  Chamber of Commerce. Supporting local business and community.">
+  <meta name="description" content="Welcome to the official Taboão Chamber of Commerce home page. Discover local businesses, events, and weather." />
   <meta name="author" content="Luis Ramon Veliz" />
-  <title>Taboão Chamber of Commerce</title>
+
+  <title> Taboão Chamber of Commerce | Home</title>
+
+  <!-- Facebook Open Graph Meta Tags -->
   <meta property="og:title" content="Taboão  Chamber of Commerce">
   <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão .">
-  <meta property="og:image" content="https://luisvguev.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://luisvguev.github.io/wdd231/chamber/directory.html">
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS Styles -->
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/styles-large.css" />
   <link rel="stylesheet" href="styles/styles-mobile.css" />
-  
+  <link rel="stylesheet" href="styles/styles-large.css" />
+
   <!-- JavaScript -->
   <script src="scripts/jscript.js" defer></script>
 </head>
 
 <body>
   <header>
-  <div class="container">
-    <h1>Taboão Chamber of Commerce</h1>
-    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
-    <nav>
-      <ul class="nav-menu" id="nav-menu"> 
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+    <div class="container">
+      <h1>Taboão  Chamber of Commerce</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-
+  
     <!-- View Toggle Buttons -->
     <div class="view-toggle">
-  <button id="toggleView">Switch to List View</button> 
-</div>
+      <button onclick="toggleView('grid')">Grid View</button>
+      <button onclick="toggleView('list')">List View</button>
+    </div>
+
     <!-- Member Directory Container -->
     <div id="memberContainer" class="grid-view">
+      <!-- Member cards will be injected here via JS -->
     </div>
 
     <div class="info-section">
@@ -55,8 +59,8 @@
         <h3>Events in Taboão </h3>
         <article>
           <h4>Upcoming:</h4>
-          <p>- 500-meter race for ages 30 to 50. June 15, 2025</p>
-          <p>- Fabric exhibition on June 20, 2025</p>
+          <p>- 500-meter race for ages 30 to 50. June 4, 2025</p>
+          <p>- Fabric exhibition on June 5, 2025</p>
         </article>
       </div>
 

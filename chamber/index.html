@@ -3,65 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to the Taboão  Chamber of Commerce. Supporting local business and community.">
+  <meta name="description" content="Welcome to the official Taboão Chamber of Commerce home page. Discover local businesses, events, and weather." />
   <meta name="author" content="Luis Ramon Veliz" />
-
-  <title>Taboão Chamber of Commerce</title>
-
-  <!-- Facebook Open Graph Meta Tags -->
-  <meta property="og:title" content="Taboão  Chamber of Commerce">
-  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão .">
-  <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+  <title>Taboão Chamber of Commerce | Home</title>
+  <meta property="og:title" content="Taboão Chamber of Commerce">
+  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão.">
+  <meta property="og:image" content="https://luisvguev.github.io/wdd231/chamber/images/og-image.jpg">
+  <meta property="og:url" content="https://luisvguev.github.io/wdd231/chamber/index.html">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- CSS Styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/styles-mobile.css" />
   <link rel="stylesheet" href="styles/styles-large.css" />
+  <link rel="stylesheet" href="styles/styles-mobile.css" />
 
   <!-- JavaScript -->
   <script src="scripts/jscript.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Taboão  Chamber of Commerce</h1>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <h1>Taboão Chamber of Commerce</h1>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    <nav>
+      <ul class="nav-menu" id="nav-menu"> 
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <main>
-    <section class="hero">
-      <h2>Connecting Local Businesses & the Community</h2>
-      <p>Discover events, business resources, and community initiatives happening in Taboão .</p>
-      <a href="join.html" class="btn">Join the Chamber</a>
-    </section>
 
-    <!-- View Toggle Buttons -->
-    <div class="view-toggle">
-      <button onclick="toggleView('grid')">Grid View</button>
-      <button onclick="toggleView('list')">List View</button>
-    </div>
+    <!-- HERO SECTION -->
+   <section class="hero">
+  <div class="hero-content">
+    <h1>Empowering Local Businesses</h1>
+    <p>Connecting entrepreneurs, fostering innovation, and growing the Taboão community together.</p>
+    <a href="join.html" class="btn">Join Us Today</a>
+  </div>
+</section>
+
+<section id="memberSpotlightContainer" class="spotlight-section">
+  <h2>Company Spotlight</h2>
+</section>
 
     <!-- Member Directory Container -->
-    <div id="memberContainer" class="grid-view">
-      <!-- Member cards will be injected here via JS -->
-    </div>
+    <div id="memberContainer" class="grid-view"></div>
 
+    <!-- Events and Weather -->
     <div class="info-section">
       <div class="Events-place">
-        <h3>Events in Taboão </h3>
+        <h3>Events in Taboão</h3>
         <article>
           <h4>Upcoming:</h4>
           <p>- 500-meter race for ages 30 to 50. June 4, 2025</p>
@@ -103,11 +103,8 @@
         <img src="images/twitter.png" alt="Twitter" />
       </a>
     </div>
-
     <p>&copy; <span id="year"></span> Luis Ramon Veliz, Brazil | WDD 231</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 </body>
 </html>
-
-
