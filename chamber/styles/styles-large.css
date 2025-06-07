@@ -115,7 +115,7 @@ header .container {
 
 /* Hero section */
 .hero {
-  background-image: url('../images/hero.jpg');
+  background-image: url('../images/hero.webp');
   background-size: cover;
   background-position: center;
   height: 100vh;

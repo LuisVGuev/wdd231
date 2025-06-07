@@ -1,9 +1,8 @@
-/* JS */
 document.addEventListener('DOMContentLoaded', () => {
-  // Toggle View (Grid / List)
   const toggleButton = document.getElementById('toggleView');
   const memberContainer = document.getElementById('memberContainer');
 
+  // Toggle View
   if (toggleButton && memberContainer) {
     toggleButton.addEventListener('click', () => {
       const isGrid = memberContainer.classList.contains('grid-view');
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Hamburguesa (Mobile Menu)
+  // Mobile Menu
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
 
@@ -23,20 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Footer Year & Last Modified
+  // Footer
   const yearSpan = document.getElementById('year');
   const modifiedSpan = document.getElementById('lastModified');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
   if (modifiedSpan) modifiedSpan.textContent = document.lastModified;
 
-  // Members and spotlights
+  // Load Members
   async function loadMembers() {
     try {
       const response = await fetch('data/members.json');
       const members = await response.json();
 
       if (memberContainer) {
-        memberContainer.innerHTML = ''; // Limpia antes de agregar
+        memberContainer.innerHTML = '';
         members.forEach(member => {
           const card = document.createElement('div');
           card.classList.add('member-card');
@@ -53,13 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Mostrar Spotlight
+      // Spotlights
       const spotlightContainer = document.getElementById('memberSpotlightContainer');
       if (spotlightContainer) {
-        spotlightContainer.innerHTML = ''; // Limpiar spotlight previo
-
+        spotlightContainer.innerHTML = '';
         const spotlightMembers = members.filter(m => m.membership === 'Gold' || m.membership === 'Silver');
-        const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2); 
+        const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2);
         const selected = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, howMany);
 
         selected.forEach(member => {
@@ -76,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
           spotlightContainer.appendChild(spotlightCard);
         });
       }
+
     } catch (err) {
       console.error("Error loading members:", err);
     }
@@ -83,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Weather
   async function loadWeather() {
-    const apiKey = '38cfffce84bffb7bb11667b3e40f2056'; 
+    const apiKey = '38cfffce84bffb7bb11667b3e40f2056';
     const city = 'São Paulo';
     const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
 
@@ -109,23 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (temp <= 10 && speed > 4.8) {
       const chill = 13.12 + 0.6215 * temp - 11.37 * Math.pow(speed, 0.16) + 0.3965 * temp * Math.pow(speed, 0.16);
       return `${chill.toFixed(1)}°C`;
-    } else {
-      return 'N/A';
     }
+    return 'N/A';
   }
 
-  // Ejecutar funciones generales
-  loadMembers();
-  loadWeather();
-
-  // --- Código que solo se ejecuta en join.html ---
-  if (window.location.pathname.endsWith('join.html')) {
-    // Set timestamp when page loads
-    const now = new Date().toISOString();
+  // ----------- ONLY ON join.html ------------
+  if (window.location.pathname.includes('join.html')) {
     const timestampInput = document.getElementById("timestamp");
-    if (timestampInput) timestampInput.value = now;
+    if (timestampInput) {
+      timestampInput.value = new Date().toISOString();
+    }
 
-    // Modal functionality
     const modalLinks = document.querySelectorAll(".card a");
     const modals = document.querySelectorAll(".modal");
     const closeButtons = document.querySelectorAll(".modal .close");
@@ -148,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close modal on outside click
     modals.forEach(modal => {
       modal.addEventListener("click", e => {
         if (e.target === modal) {
@@ -157,11 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close modal on ESC key
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         modals.forEach(modal => modal.classList.remove("active"));
       }
     });
   }
+
+  // Load dynamic data
+  loadMembers();
+  loadWeather();
 });
+
