@@ -6,95 +6,220 @@
   <meta name="description" content="Welcome to the official Taboão Chamber of Commerce home page. Discover local businesses, events, and weather." />
   <meta name="author" content="Luis Ramon Veliz" />
 
-  <title> Taboão Chamber of Commerce | Home</title>
+  <title>Taboão Chamber of Commerce | Join</title>
 
   <!-- Facebook Open Graph Meta Tags -->
-  <meta property="og:title" content="Taboão  Chamber of Commerce">
-  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão .">
-  <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+  <meta property="og:title" content="Taboão Chamber of Commerce" />
+  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão." />
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/join.html" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS Styles -->
-  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/normalize.css" />
   <link rel="stylesheet" href="styles/styles-mobile.css" />
   <link rel="stylesheet" href="styles/styles-large.css" />
 
-  <!-- JavaScript -->
+
+ <!-- JavaScript -->
   <script src="scripts/jscript.js" defer></script>
 </head>
 
 <body>
   <header>
     <div class="container">
-      <h1>Taboão  Chamber of Commerce</h1>
+      <h1>Taboão Chamber of Commerce</h1>
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-  
-    <!-- View Toggle Buttons -->
-    <div class="view-toggle">
-      <button onclick="toggleView('grid')">Grid View</button>
-      <button onclick="toggleView('list')">List View</button>
-    </div>
+    <!--Application Form -->
+    <form method="get" action="thankyou.html" novalidate>
+      <label for="firstName">
+        First Name:
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          title="Enter your first name"
+          autocomplete="given-name"
+          required
+          aria-required="true"
+        />
+      </label>
 
-    <!-- Member Directory Container -->
-    <div id="memberContainer" class="grid-view">
-      <!-- Member cards will be injected here via JS -->
-    </div>
+      <label for="lastName">
+        Last Name:
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          title="Enter your last name"
+          autocomplete="family-name"
+          required
+          aria-required="true"
+        />
+      </label>
 
-    <div class="info-section">
-      <div class="Events-place">
-        <h3>Events in Taboão </h3>
-        <article>
-          <h4>Upcoming:</h4>
-          <p>- 500-meter race for ages 30 to 50. June 4, 2025</p>
-          <p>- Fabric exhibition on June 5, 2025</p>
-        </article>
+      <label for="orgTitle">
+        Organizational Title:
+        <input
+          type="text"
+          id="orgTitle"
+          name="orgTitle"
+          title="Your title within the organization"
+          autocomplete="organization-title"
+          pattern="^[A-Za-z\- ]{7,}$"
+          placeholder="At least 7 letters, spaces or hyphens"
+          aria-describedby="orgTitleHelp"
+        />
+        <small id="orgTitleHelp">Only letters, hyphens, spaces; minimum 7 characters</small>
+      </label>
+
+      <label for="email">
+        Email:
+        <input
+          type="email"
+          id="email"
+          name="email"
+          title="Enter your email address"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+          aria-required="true"
+        />
+      </label>
+
+      <label for="phone">
+        Mobile Phone:
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          title="Enter your mobile number"
+          autocomplete="tel"
+          required
+          aria-required="true"
+        />
+      </label>
+
+      <label for="organization">
+        Organization Name:
+        <input
+          type="text"
+          id="organization"
+          name="organization"
+          title="Enter your organization's name"
+          autocomplete="organization"
+          required
+          aria-required="true"
+        />
+      </label>
+
+      <label for="membershipLevel">
+        Membership Level:
+        <select
+          id="membershipLevel"
+          name="membershipLevel"
+          title="Choose a membership level"
+          required
+          aria-required="true"
+        >
+          <option value="np">NP Membership (Free for Nonprofits)</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </label>
+
+      <label for="orgDescription">
+        Organization Description:
+        <textarea
+          id="orgDescription"
+          name="orgDescription"
+          title="Describe your organization"
+          rows="4"
+        ></textarea>
+      </label>
+
+      <input type="hidden" name="timestamp" id="timestamp" />
+
+      <input type="submit" value="Submit Application" />
+    </form>
+
+    <!-- Membership Level Cards -->
+    <section class="membership-cards" aria-label="Membership level benefits">
+      <div class="card">
+        <h3>NP Membership</h3>
+        <a href="#np-modal" role="button" aria-haspopup="dialog" aria-controls="np-modal">See Benefits</a>
       </div>
+      <div class="card">
+        <h3>Bronze Membership</h3>
+        <a href="#bronze-modal" role="button" aria-haspopup="dialog" aria-controls="bronze-modal">See Benefits</a>
+      </div>
+      <div class="card">
+        <h3>Silver Membership</h3>
+        <a href="#silver-modal" role="button" aria-haspopup="dialog" aria-controls="silver-modal">See Benefits</a>
+      </div>
+      <div class="card">
+        <h3>Gold Membership</h3>
+        <a href="#gold-modal" role="button" aria-haspopup="dialog" aria-controls="gold-modal">See Benefits</a>
+      </div>
+    </section>
 
-      <div class="overlay-container">
-        <!-- Weather Overlay -->
-        <div class="overlay weather-overlay">
-          <h3>Weather in Brazil</h3>
-          <p id="city-name">São Paulo</p>
-          <p id="temperature">Temperature: <span id="temp-value">--</span></p>
-          <p id="windspeed">Wind Speed: <span id="wind-value">--</span></p>
-          <p id="windchill">Windchill: <span id="windchill-result">--</span></p>
-        </div>
+    <!-- Modals -->
+    <div id="np-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="np-modal-title" tabindex="-1">
+      <div class="modal-content">
+        <button class="close" aria-label="Close NP Membership benefits">&times;</button>
+        <h2 id="np-modal-title">NP Membership Benefits</h2>
+        <p>Free membership for non-profit organizations. Benefits include community involvement, access to basic events, and network opportunities.</p>
+      </div>
+    </div>
 
-        <!-- Country Data Overlay -->
-        <div class="overlay country-overlay">
-          <h3>Brazil Data</h3>
-          <p><strong>Area:</strong> 8,515,767 km²</p>
-          <p><strong>Population:</strong> 214 million</p>
-          <p><strong>Language:</strong> Portuguese</p>
-          <p><strong>Capital:</strong> Brasília</p>
-        </div>
+    <div id="bronze-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bronze-modal-title" tabindex="-1">
+      <div class="modal-content">
+        <button class="close" aria-label="Close Bronze Membership benefits">&times;</button>
+        <h2 id="bronze-modal-title">Bronze Membership Benefits</h2>
+        <p>Includes NP benefits plus invitations to special events, basic advertising on the website, and access to training sessions.</p>
+      </div>
+    </div>
+
+    <div id="silver-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="silver-modal-title" tabindex="-1">
+      <div class="modal-content">
+        <button class="close" aria-label="Close Silver Membership benefits">&times;</button>
+        <h2 id="silver-modal-title">Silver Membership Benefits</h2>
+        <p>Includes Bronze benefits plus premium advertising spots, event discounts, and exclusive training programs.</p>
+      </div>
+    </div>
+
+    <div id="gold-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="gold-modal-title" tabindex="-1">
+      <div class="modal-content">
+        <button class="close" aria-label="Close Gold Membership benefits">&times;</button>
+        <h2 id="gold-modal-title">Gold Membership Benefits</h2>
+        <p>All Silver benefits plus spotlight advertising on the homepage, VIP event access, and personalized business support.</p>
       </div>
     </div>
   </main>
 
   <footer>
     <div class="footer-socials">
-      <a href="https://www.linkedin.com" target="_blank">
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">
         <img src="images/linked.png" alt="LinkedIn" />
       </a>
-      <a href="https://www.youtube.com" target="_blank">
+      <a href="https://www.youtube.com" target="_blank" rel="noopener">
         <img src="images/youtube.png" alt="YouTube" />
       </a>
-      <a href="https://twitter.com/" target="_blank">
+      <a href="https://twitter.com/" target="_blank" rel="noopener">
         <img src="images/twitter.png" alt="Twitter" />
       </a>
     </div>
@@ -102,5 +227,8 @@
     <p>&copy; <span id="year"></span> Luis Ramon Veliz, Brazil | WDD 231</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
+<strong>Software Development</strong>
+
+<code>**Software Development**</code>
 </body>
 </html>

@@ -6,14 +6,15 @@
   <meta name="description" content="Welcome to the official Taboão Chamber of Commerce home page. Discover local businesses, events, and weather." />
   <meta name="author" content="Luis Ramon Veliz" />
   <title>Taboão Chamber of Commerce | Home</title>
+
+  <!-- Open Graph for social sharing -->
   <meta property="og:title" content="Taboão Chamber of Commerce">
   <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão.">
   <meta property="og:image" content="https://luisvguev.github.io/wdd231/chamber/images/og-image.jpg">
   <meta property="og:url" content="https://luisvguev.github.io/wdd231/chamber/index.html">
 
-  <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-
+  
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/styles-large.css" />
@@ -24,83 +25,86 @@
 </head>
 
 <body>
-<header>
-  <div class="container">
-    <h1>Taboão Chamber of Commerce</h1>
-    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
-    <nav>
-      <ul class="nav-menu" id="nav-menu"> 
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  <header>
+    <div class="container">
+      <h1>Taboão Chamber of Commerce</h1>
+      <button class="hamburger" id="hamburger" aria-label="Open main menu">&#9776;</button>
+      <nav>
+        <ul class="nav-menu" id="nav-menu"> 
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-
     <!-- HERO SECTION -->
-   <section class="hero">
-  <div class="hero-content">
-    <h1>Empowering Local Businesses</h1>
-    <p>Connecting entrepreneurs, fostering innovation, and growing the Taboão community together.</p>
-    <a href="join.html" class="btn">Join Us Today</a>
-  </div>
-</section>
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="hero-content">
+        <h2>Empowering Local Businesses</h2>
+        <p>Connecting entrepreneurs, fostering innovation, and growing the Taboão community together.</p>
+        <a href="join.html" class="btn">Join Us Today</a>
+      </div>
+    </section>
 
-<section id="memberSpotlightContainer" class="spotlight-section">
-  <h2>Company Spotlight</h2>
-</section>
+    <!-- COMPANY SPOTLIGHT -->
+    <section id="memberSpotlightContainer" class="spotlight-section" aria-labelledby="spotlight-heading">
+      <h2 id="spotlight-heading">Company Spotlight</h2>
+    </section><br>
 
-    <!-- Member Directory Container -->
-    <div id="memberContainer" class="grid-view"></div>
+    <!-- MEMBER DIRECTORY -->
+    <section aria-label="Member Directory">
+      <div id="memberContainer" class="grid-view"></div>
+    </section>
 
-    <!-- Events and Weather -->
-    <div class="info-section">
-      <div class="Events-place">
-        <h3>Events in Taboão</h3>
+    <!-- EVENTS AND WEATHER -->
+    <section class="info-section">
+      <div class="Events-place" aria-labelledby="events-heading">
+        <h3 id="events-heading">Events in Taboão</h3>
         <article>
           <h4>Upcoming:</h4>
-          <p>- 500-meter race for ages 30 to 50. June 4, 2025</p>
-          <p>- Fabric exhibition on June 5, 2025</p>
+          <ul>
+            <li>500-meter race for ages 30 to 50 - June 4, 2025</li>
+            <li>Fabric exhibition - June 5, 2025</li>
+          </ul>
         </article>
       </div>
 
       <div class="overlay-container">
-        <!-- Weather Overlay -->
-        <div class="overlay weather-overlay">
-          <h3>Weather in Brazil</h3>
+        <!-- WEATHER -->
+        <div class="overlay weather-overlay" aria-labelledby="weather-heading">
+          <h3 id="weather-heading">Weather in Brazil</h3>
           <p id="city-name">São Paulo</p>
           <p id="temperature">Temperature: <span id="temp-value">--</span></p>
           <p id="windspeed">Wind Speed: <span id="wind-value">--</span></p>
           <p id="windchill">Windchill: <span id="windchill-result">--</span></p>
         </div>
 
-        <!-- Country Data Overlay -->
-        <div class="overlay country-overlay">
-          <h3>Brazil Data</h3>
+        <!-- COUNTRY DATA -->
+        <div class="overlay country-overlay" aria-labelledby="country-heading">
+          <h3 id="country-heading">Brazil Data</h3>
           <p><strong>Area:</strong> 8,515,767 km²</p>
           <p><strong>Population:</strong> 214 million</p>
           <p><strong>Language:</strong> Portuguese</p>
           <p><strong>Capital:</strong> Brasília</p>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
     <div class="footer-socials">
-      <a href="https://www.linkedin.com" target="_blank">
-        <img src="images/linked.png" alt="LinkedIn" />
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+        <img src="images/linked.png" alt="LinkedIn logo" />
       </a>
-      <a href="https://www.youtube.com" target="_blank">
-        <img src="images/youtube.png" alt="YouTube" />
+      <a href="https://www.youtube.com" target="_blank" rel="noopener">
+        <img src="images/youtube.png" alt="YouTube logo" />
       </a>
-      <a href="https://twitter.com/" target="_blank">
-        <img src="images/twitter.png" alt="Twitter" />
+      <a href="https://twitter.com/" target="_blank" rel="noopener">
+        <img src="images/twitter.png" alt="Twitter logo" />
       </a>
     </div>
     <p>&copy; <span id="year"></span> Luis Ramon Veliz, Brazil | WDD 231</p>

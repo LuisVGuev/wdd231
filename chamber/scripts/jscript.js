@@ -121,3 +121,49 @@ document.addEventListener('DOMContentLoaded', () => {
   loadMembers();
   loadWeather();
 });
+
+
+  // Set timestamp when page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      const now = new Date().toISOString();
+      document.getElementById("timestamp").value = now;
+
+      // Modal functionality
+      const modalLinks = document.querySelectorAll(".card a");
+      const modals = document.querySelectorAll(".modal");
+      const closeButtons = document.querySelectorAll(".modal .close");
+
+      modalLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const targetModal = document.getElementById(targetId);
+          if (targetModal) {
+            targetModal.classList.add("active");
+            targetModal.querySelector(".close").focus();
+          }
+        });
+      });
+
+      closeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.closest(".modal").classList.remove("active");
+        });
+      });
+
+      // Close modal on outside click
+      modals.forEach(modal => {
+        modal.addEventListener("click", e => {
+          if (e.target === modal) {
+            modal.classList.remove("active");
+          }
+        });
+      });
+
+      // Close modal on ESC key
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape") {
+          modals.forEach(modal => modal.classList.remove("active"));
+        }
+      });
+    });

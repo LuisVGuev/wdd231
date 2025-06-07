@@ -1,5 +1,3 @@
-/* Default Styles for Large Screens */
-
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
@@ -10,6 +8,14 @@
   --background-color: #ffffff;
   --text-color: #333333;
   --font-family: 'Open Sans', sans-serif;
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* Reset & Base Styles */
@@ -27,6 +33,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Typography focus */
+a:focus,
+button:focus,
+.modal-content .close:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -60,6 +75,13 @@ header .container {
   justify-content: center;
   list-style: none;
   flex-wrap: wrap;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.nav-menu.active {
+  max-height: 300px;
 }
 
 .nav-menu li {
@@ -87,6 +109,8 @@ header .container {
   font-size: 2rem;
   color: white;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* Hero section */
@@ -137,13 +161,16 @@ header .container {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-block;
 }
 
 .btn:hover {
   background-color: #e0a82c;
 }
 
-/* spotlight */
+/* Spotlight Section */
 .spotlight-section {
   display: flex;
   flex-wrap: wrap;
@@ -151,63 +178,7 @@ header .container {
   gap: 1rem;
 }
 
-.member-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 1rem;
-  max-width: 300px;
-  text-align: center;
-  background: #f9f9f9;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
-.member-card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-
-/* View Toggle Buttons */
-.view-toggle {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.view-toggle button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  margin: 0 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.view-toggle button:hover,
-.view-toggle button:focus {
-  background-color: var(--secondary-color);
-  color: black;
-  outline: none;
-}
-
-/* Member Container Views */
-#memberContainer.grid-view {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem;
-}
-
-#memberContainer.list-view {
-  display: block;
-}
-
-/* Member Card Base Styles */
+/* Member Card (shared styles) */
 .member-card {
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -215,16 +186,11 @@ header .container {
   background-color: #f9f9f9;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: transform 0.2s;
-  max-width: 220px;
+  max-width: 300px;
   font-size: 0.9rem;
   margin: 1rem auto;
-  overflow: hidden;
   width: 100%;
-}
-
-.grid-view .member-card {
-  width: 220px;
+  transition: transform 0.2s;
 }
 
 .member-card:hover {
@@ -239,8 +205,8 @@ header .container {
 }
 
 .member-card h3 {
-  margin: 0.5rem 0;
   font-size: 1.1rem;
+  margin: 0.5rem 0;
   color: var(--primary-color);
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -257,23 +223,35 @@ header .container {
 .member-card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: var(--primary-color);
+  color: #004799;
   text-decoration: none;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .member-card a:hover {
   text-decoration: underline;
 }
 
-/* Member Card in List View */
+/* Grid & List View */
+#memberContainer.grid-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#memberContainer.list-view {
+  display: block;
+}
+
 .list-view .member-card {
-  width: 100%;
-  text-align: left;
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1rem auto;
+  text-align: left;
+  width: 100%;
 }
 
 .list-view .member-card img {
@@ -281,17 +259,34 @@ header .container {
   height: auto;
 }
 
-.list-view .member-card .member-details {
+.list-view .member-details {
   flex: 1;
   text-align: left;
 }
 
-.list-view .member-card h3 {
-  margin: 0 0 0.5rem 0;
+/* View Toggle */
+.view-toggle {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-.list-view .member-card p {
-  margin: 0.3rem 0;
+.view-toggle button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin: 0 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  min-height: 44px;
+}
+
+.view-toggle button:hover,
+.view-toggle button:focus {
+  background-color: var(--secondary-color);
+  color: black;
 }
 
 /* Info Sections */
@@ -327,16 +322,16 @@ header .container {
   font-size: 1.25rem;
 }
 
-.overlay p {
-  margin: 0.3rem 0;
+.spotlight-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.overlay-container {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+#spotlight-heading {
+  flex-basis: 100%;
+  text-align: center;
 }
 
 /* Footer */
@@ -349,19 +344,12 @@ footer {
   font-size: 0.95rem;
 }
 
-footer a {
-  margin: 0 0.5rem;
-  color: inherit;
-  text-decoration: none;
-}
-
 footer img {
   width: 40px;
   height: 40px;
   object-fit: contain;
 }
 
-/* Social Icons */
 .footer-socials {
   display: flex;
   justify-content: center;
@@ -370,44 +358,44 @@ footer img {
   flex-wrap: nowrap;
 }
 
-.linked-button,
-.youtube-button,
-.twitter-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.footer-socials a {
   width: 50px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background-color: #333;
   color: white;
   font-size: 1.2rem;
   text-decoration: none;
   transition: transform 0.3s, background-color 0.3s;
+  min-height: 44px;
+  min-width: 44px;
 }
 
-.linked-button:hover,
-.youtube-button:hover,
-.twitter-button:hover {
+.footer-socials a:hover {
   background-color: var(--secondary-color);
   transform: scale(1.1);
 }
 
-/* Responsive Styles */
+@media (min-width: 769px) {
+  .nav-menu {
+    max-height: none !important;
+    display: flex !important;
+    overflow: visible !important;
+  }
+}
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
   .nav-menu {
-    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
-
-  .nav-menu.active {
-    display: flex;
   }
 
   .nav-menu li {
@@ -416,28 +404,11 @@ footer img {
 
   header .container {
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
   }
 
-  header h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  #memberContainer.grid-view {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .member-card {
-    width: 100%;
     max-width: 90%;
-    margin: 1rem 0;
-  }
-
-  .footer-socials {
-    gap: 1.5rem;
   }
 
   footer img {
