@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const card = document.createElement('div');
           card.classList.add('member-card');
           card.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo" class="member-image">
-            <div class="member-details">
-              <h3>${member.name}</h3>
-              <p>${member.address}</p>
-              <p>${member.phone}</p>
-              <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
+          <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
+          <div class="member-details">
+          <h3>${member.name}</h3>
+          <p>${member.address}</p>
+          <p>${member.phone}</p>
+          <a href="${member.website}" target="_blank">Visit Website</a>
+          </div>
           `;
           memberContainer.appendChild(card);
         });
@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const spotlightCard = document.createElement('div');
           spotlightCard.classList.add('member-card');
           spotlightCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name}">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-            <p><strong>${member.membership} Member</strong></p>
+          <img src="${member.image}" alt="${member.name}" width="300" height="150" loading="lazy">
+          <h3>${member.name}</h3>
+          <p>${member.address}</p>
+          <p>${member.phone}</p>
+          <a href="${member.website}" target="_blank">Visit Website</a>
+          <p><strong>${member.membership} Member</strong></p>
           `;
           spotlightContainer.appendChild(spotlightCard);
         });
