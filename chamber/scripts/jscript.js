@@ -177,3 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
   loadMembers();
   loadWeather();
 });
+
+fetch("https://api.openweathermap.org/data/2.5/forecast?q=São Paulo&units=metric&appid=YOUR_KEY", {
+  headers: {
+    "Accept-Encoding": "gzip, deflate, br"
+  }
+});
