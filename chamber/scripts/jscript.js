@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const spotlightContainer = document.getElementById('memberSpotlightContainer');
 
-      // Cargar miembros generales
+      // Charger Members
       if (memberContainer) {
         memberContainer.innerHTML = '';
         const fragment = document.createDocumentFragment();
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return 'N/A';
   }
 
-  // ----------- ONLY ON join.html ------------
+  // ----------- join.html ------------
   if (window.location.pathname.includes('join.html')) {
     const timestampInput = document.getElementById("timestamp");
     if (timestampInput) {
