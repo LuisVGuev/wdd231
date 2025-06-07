@@ -322,17 +322,40 @@ header .container {
   font-size: 1.25rem;
 }
 
+/*Section Company Spotlight */
 .spotlight-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column; /* organiza verticalmente */
+  align-items: center;    /* centra horizontalmente los hijos */
   gap: 1rem;
+  padding: 1rem;
 }
 
 #spotlight-heading {
-  flex-basis: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+#memberSpotlightContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto; /* si hay muchas cartas, habilita scroll horizontal */
+  width: 100%;
+  max-width: 800px; /* opcional: limita el ancho máximo */
+}
+
+.member-card {
+  flex: 0 0 200px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-sizing: border-box;
   text-align: center;
 }
+
+
+
 
 /* Footer */
 footer {

@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('data/members.json');
       const members = await response.json();
 
-      // show all members
       if (memberContainer) {
+        memberContainer.innerHTML = ''; // Limpia antes de agregar
         members.forEach(member => {
           const card = document.createElement('div');
           card.classList.add('member-card');
@@ -56,14 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Mostrar Spotlight
       const spotlightContainer = document.getElementById('memberSpotlightContainer');
       if (spotlightContainer) {
-        const spotlightMembers = members.filter(
-        m => m.membership === 'Gold' || m.membership === 'Silver'
-       );
+        spotlightContainer.innerHTML = ''; // Limpiar spotlight previo
 
-        const howMany = Math.floor(Math.random() * 2) + 2; 
+        const spotlightMembers = members.filter(m => m.membership === 'Gold' || m.membership === 'Silver');
+        const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2); 
         const selected = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, howMany);
-
-
 
         selected.forEach(member => {
           const spotlightCard = document.createElement('div');
@@ -80,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     } catch (err) {
-      console.error("Erro to open members:", err);
+      console.error("Error loading members:", err);
     }
   }
 
@@ -103,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (windSpan) windSpan.textContent = `${current.wind.speed} m/s`;
       if (chillSpan) chillSpan.textContent = calculateWindChill(current.main.temp, current.wind.speed);
     } catch (error) {
-      console.error('Error open Weather', error);
+      console.error('Error fetching weather', error);
     }
   }
 
-  //Wind Chill
+  // Wind Chill
   function calculateWindChill(temp, speed) {
     if (temp <= 10 && speed > 4.8) {
       const chill = 13.12 + 0.6215 * temp - 11.37 * Math.pow(speed, 0.16) + 0.3965 * temp * Math.pow(speed, 0.16);
@@ -117,53 +114,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // load function
+  // Ejecutar funciones generales
   loadMembers();
   loadWeather();
-});
 
+  // --- Código que solo se ejecuta en join.html ---
+  if (window.location.pathname.endsWith('join.html')) {
+    // Set timestamp when page loads
+    const now = new Date().toISOString();
+    const timestampInput = document.getElementById("timestamp");
+    if (timestampInput) timestampInput.value = now;
 
-  // Set timestamp when page loads
-    document.addEventListener("DOMContentLoaded", () => {
-      const now = new Date().toISOString();
-      document.getElementById("timestamp").value = now;
+    // Modal functionality
+    const modalLinks = document.querySelectorAll(".card a");
+    const modals = document.querySelectorAll(".modal");
+    const closeButtons = document.querySelectorAll(".modal .close");
 
-      // Modal functionality
-      const modalLinks = document.querySelectorAll(".card a");
-      const modals = document.querySelectorAll(".modal");
-      const closeButtons = document.querySelectorAll(".modal .close");
-
-      modalLinks.forEach(link => {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          const targetId = link.getAttribute("href").substring(1);
-          const targetModal = document.getElementById(targetId);
-          if (targetModal) {
-            targetModal.classList.add("active");
-            targetModal.querySelector(".close").focus();
-          }
-        });
-      });
-
-      closeButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          btn.closest(".modal").classList.remove("active");
-        });
-      });
-
-      // Close modal on outside click
-      modals.forEach(modal => {
-        modal.addEventListener("click", e => {
-          if (e.target === modal) {
-            modal.classList.remove("active");
-          }
-        });
-      });
-
-      // Close modal on ESC key
-      document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-          modals.forEach(modal => modal.classList.remove("active"));
+    modalLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const targetModal = document.getElementById(targetId);
+        if (targetModal) {
+          targetModal.classList.add("active");
+          targetModal.querySelector(".close").focus();
         }
       });
     });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.closest(".modal").classList.remove("active");
+      });
+    });
+
+    // Close modal on outside click
+    modals.forEach(modal => {
+      modal.addEventListener("click", e => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    });
+
+    // Close modal on ESC key
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        modals.forEach(modal => modal.classList.remove("active"));
+      }
+    });
+  }
+});
