@@ -4,7 +4,7 @@
     "address": "123 Main Street, Taboão",
     "phone": "193667115",
     "website": "https://bakeryrestaurant.com",
-    "image": "images/bakery.jpg",
+    "image": "images/bakery.webp",
     "membership": "Silver"
   },
   {
@@ -12,7 +12,7 @@
     "address": "456 Elm Street, Taboão",
     "phone": "806866633",
     "website": "https://storeshoes.com",
-    "image": "images/shoes.jpg",
+    "image": "images/shoes.webp",
     "membership": "Silver"
   },
   {
@@ -20,7 +20,7 @@
     "address": "789 Oak Avenue, Taboão",
     "phone": "913696366",
     "website": "https://clothingfactory.com",
-    "image": "images/fashion.jpg",
+    "image": "images/fashion.webp",
     "membership": "Gold"
   },
   {
@@ -28,7 +28,7 @@
     "address": "45 Nature Ave, Taboão",
     "phone": "193667223",
     "website": "https://greengardenchoco.com",
-    "image": "images/chocolate.jpg",
+    "image": "images/chocolate.webp",
     "membership": "Gold"
   },
   {
@@ -36,7 +36,7 @@
     "address": "89 Innovation Blvd, Taboão",
     "phone": "193667334",
     "website": "https://techsolutionsco.com",
-    "image": "images/circuits.jpg",
+    "image": "images/circuits.webp",
     "membership": "Gold"
   },
   {
@@ -44,7 +44,7 @@
     "address": "10 Wellness Street, Taboão",
     "phone": "193667445",
     "website": "https://sunshinefitness.com",
-    "image": "images/bicycle.jpg",
+    "image": "images/bicycle.webp",
     "membership": "Silver"
   },
   {
@@ -52,7 +52,7 @@
     "address": "22 Blossom Way, Taboão",
     "phone": "193667556",
     "website": "https://elegantflorist.com",
-    "image": "images/lisianthus.jpg",
+    "image": "images/lisianthus.webp",
     "membership": "Bronze"
   }
 ]
