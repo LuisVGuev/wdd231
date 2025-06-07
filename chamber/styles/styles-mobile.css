@@ -42,7 +42,7 @@
   .hero .btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.95rem;
-    min-height: 48px; /* Mejor para accesibilidad táctil */
+    min-height: 48px; 
     display: inline-block;
   }
 
@@ -98,7 +98,7 @@
   }
 
   .member-card a {
-    color: #005999; /* Mayor contraste */
+    color: #005999; 
     text-decoration: none;
     word-break: break-word;
     font-weight: 600;
@@ -150,5 +150,18 @@
 
   body {
     overflow-x: hidden;
+  }
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .responsive-nav.open {
+    display: block;
   }
 }
