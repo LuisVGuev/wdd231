@@ -1,3 +1,4 @@
+/* JS */
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('toggleView');
   const memberContainer = document.getElementById('memberContainer');
@@ -34,42 +35,58 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('data/members.json');
       const members = await response.json();
 
+      const spotlightContainer = document.getElementById('memberSpotlightContainer');
+
+      // Cargar miembros generales
       if (memberContainer) {
         memberContainer.innerHTML = '';
+        const fragment = document.createDocumentFragment();
+
         members.forEach(member => {
           const card = document.createElement('div');
           card.classList.add('member-card');
+
           card.innerHTML = `
-          <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
-          <div class="member-details">
-          <h3>${member.name}</h3>
-          <p>${member.address}</p>
-          <p>${member.phone}</p>
-          <a href="${member.website}" target="_blank">Visit Website</a>
-          </div>
+            <picture>
+              <source srcset="${member.image}" type="image/jpeg">
+              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
+            </picture>
+            <div class="member-details">
+              <h3>${member.name}</h3>
+              <p>${member.address}</p>
+              <p>${member.phone}</p>
+              <a href="${member.website}" target="_blank">Visit Website</a>
+            </div>
           `;
-          memberContainer.appendChild(card);
+
+          fragment.appendChild(card);
         });
+
+        memberContainer.appendChild(fragment);
       }
 
       // Spotlights
-      const spotlightContainer = document.getElementById('memberSpotlightContainer');
       if (spotlightContainer) {
         spotlightContainer.innerHTML = '';
         const spotlightMembers = members.filter(m => m.membership === 'Gold' || m.membership === 'Silver');
         const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2);
         const selected = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, howMany);
 
-        selected.forEach(member => {
+        selected.forEach((member, index) => {
           const spotlightCard = document.createElement('div');
           spotlightCard.classList.add('member-card');
+
           spotlightCard.innerHTML = `
-          <img src="${member.image}" alt="${member.name}" width="300" height="150" loading="lazy">
-          <h3>${member.name}</h3>
-          <p>${member.address}</p>
-          <p>${member.phone}</p>
-          <a href="${member.website}" target="_blank">Visit Website</a>
-          <p><strong>${member.membership} Member</strong></p>
+            <picture>
+              <source srcset="${member.image}" type="image/jpeg">
+              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
+            </picture>
+            <div class="member-details">
+              <h3>${member.name}</h3>
+              <p>${member.address}</p>
+              <p>${member.phone}</p>
+              <a href="${member.website}" target="_blank">Visit Website</a>
+            </div>
           `;
           spotlightContainer.appendChild(spotlightCard);
         });
@@ -160,4 +177,3 @@ document.addEventListener('DOMContentLoaded', () => {
   loadMembers();
   loadWeather();
 });
-

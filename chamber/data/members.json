@@ -1,58 +1,59 @@
 [
-    {
-      "name": "Bakery Restaurant",
-      "address": "123 Main Street, Taboão",
-      "phone": "193667115",
-      "website": "https://bakeryrestaurant.com",
-      "image": "https://cdn.pixabay.com/photo/2016/11/29/10/09/bakery-1868925_1280.jpg",
-      "membership": "Silver"
-    },
-    {
-      "name": "Shoe Store",
-      "address": "456 Elm Street, Taboão",
-      "phone": "806866633",
-      "website": "https://storeshoes.com",
-      "image": "https://cdn.pixabay.com/photo/2014/12/31/11/41/shoes-584850_1280.jpg",
-      "membership": "Silver"
-    },
-    {
-      "name": "Clothing Fabric Factor",
-      "address": "789 Oak Avenue, Taboão",
-      "phone": "913696366",
-      "website": "https://clothingfactory.com",
-      "image": "https://cdn.pixabay.com/photo/2016/03/27/19/31/fashion-1283863_1280.jpg",
-      "membership": "Gold"
-    },
-    {
-      "name": "Green Garden Chocolate",
-      "address": "45 Nature Ave, Taboão",
-      "phone": "193667223",
-      "website": "https://greengardenchoco.com",
-      "image": "https://cdn.pixabay.com/photo/2019/09/06/07/59/chocolate-4455840_1280.jpg",
-      "membership": "Gold"
-    },
-    {
-      "name": "Tech Solutions Co.",
-      "address": "89 Innovation Blvd, Taboão",
-      "phone": "193667334",
-      "website": "https://techsolutionsco.com",
-      "image": "https://cdn.pixabay.com/photo/2018/09/23/21/11/circuits-3698536_1280.jpg",
-      "membership": "Gold"
-    },
-    {
-      "name": "Sunshine Fitness",
-      "address": "10 Wellness Street, Taboão",
-      "phone": "193667445",
-      "website": "https://sunshinefitness.com",
-      "image": "https://cdn.pixabay.com/photo/2014/07/05/08/18/bicycle-384566_1280.jpg",
-      "membership": "Silver"
-    },
-    {
-      "name": "Elegant Florist",
-      "address": "22 Blossom Way, Taboão",
-      "phone": "193667556",
-      "website": "https://elegantflorist.com",
-      "image": "https://cdn.pixabay.com/photo/2016/05/19/09/49/lisianthus-1402486_1280.jpg",
-      "membership": "Bronze"
-    }
-  ]
+  {
+    "name": "Bakery Restaurant",
+    "address": "123 Main Street, Taboão",
+    "phone": "193667115",
+    "website": "https://bakeryrestaurant.com",
+    "image": "images/bakery.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Shoe Store",
+    "address": "456 Elm Street, Taboão",
+    "phone": "806866633",
+    "website": "https://storeshoes.com",
+    "image": "images/shoes.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Clothing Fabric Factor",
+    "address": "789 Oak Avenue, Taboão",
+    "phone": "913696366",
+    "website": "https://clothingfactory.com",
+    "image": "images/fashion.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Green Garden Chocolate",
+    "address": "45 Nature Ave, Taboão",
+    "phone": "193667223",
+    "website": "https://greengardenchoco.com",
+    "image": "images/chocolate.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Tech Solutions Co.",
+    "address": "89 Innovation Blvd, Taboão",
+    "phone": "193667334",
+    "website": "https://techsolutionsco.com",
+    "image": "images/circuits.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Sunshine Fitness",
+    "address": "10 Wellness Street, Taboão",
+    "phone": "193667445",
+    "website": "https://sunshinefitness.com",
+    "image": "images/bicycle.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Elegant Florist",
+    "address": "22 Blossom Way, Taboão",
+    "phone": "193667556",
+    "website": "https://elegantflorist.com",
+    "image": "images/lisianthus.jpg",
+    "membership": "Bronze"
+  }
+]
+
