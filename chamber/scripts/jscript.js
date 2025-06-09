@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Load dynamic data
+  // Load dynamic
   loadMembers();
   loadWeather();
 });
