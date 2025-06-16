@@ -1,0 +1,29 @@
+/* Styles-large*/
+body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+h1, h2 {
+      font-family: 'Bebas Neue', cursive;
+      color: #1e3a5f;
+    }
+h1 {
+      font-size: 2.5rem;
+    }
+h2 {
+      margin-top: 2rem;
+    }
+.highlight {
+    color: #f97316;
+}
+ul {
+margin-left: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}    
