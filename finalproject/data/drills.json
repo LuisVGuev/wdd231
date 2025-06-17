@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Free Throw Focus",
+    "skill": "Shooting",
+    "difficulty": "Beginner",
+    "description": "10 sets of 10 free throws with form checks.",
+    "duration": "20 minutes"
+  },
+  {
+    "name": "Dribble Maze",
+    "skill": "Dribbling",
+    "difficulty": "Intermediate",
+    "description": "Navigate cones with both hands at speed.",
+    "duration": "15 minutes"
+  },
+  {
+    "name": "3-Point Challenge",
+    "skill": "Shooting",
+    "difficulty": "Advanced",
+    "description": "Make 20 three-pointers from various spots.",
+    "duration": "30 minutes"
+  },
+  {
+    "name": "Speed Dribble",
+    "skill": "Dribbling",
+    "difficulty": "Beginner",
+    "description": "Sprint while dribbling from baseline to baseline.",
+    "duration": "10 minutes"
+  },
+  {
+    "name": "Defensive Slide Drill",
+    "skill": "Defense",
+    "difficulty": "Intermediate",
+    "description": "Improve lateral quickness with defensive slides.",
+    "duration": "15 minutes"
+  },
+  {
+    "name": "Box Out and Rebound",
+    "skill": "Rebounding",
+    "difficulty": "Beginner",
+    "description": "Practice boxing out opponents and securing rebounds.",
+    "duration": "20 minutes"
+  },
+  {
+    "name": "Pick and Roll Simulation",
+    "skill": "Offense",
+    "difficulty": "Advanced",
+    "description": "Practice pick and roll moves with a partner.",
+    "duration": "25 minutes"
+  },
+  {
+    "name": "Layup Line",
+    "skill": "Shooting",
+    "difficulty": "Beginner",
+    "description": "Continuous layups with focus on form and speed.",
+    "duration": "15 minutes"
+  },
+  {
+    "name": "Passing Accuracy",
+    "skill": "Passing",
+    "difficulty": "Intermediate",
+    "description": "Target practice for chest and bounce passes.",
+    "duration": "20 minutes"
+  },
+  {
+    "name": "Endurance Run",
+    "skill": "Conditioning",
+    "difficulty": "Advanced",
+    "description": "Run full court sprints to improve stamina.",
+    "duration": "30 minutes"
+  },
+  {
+    "name": "Crossover Drill",
+    "skill": "Dribbling",
+    "difficulty": "Intermediate",
+    "description": "Master quick crossover moves with cones.",
+    "duration": "15 minutes"
+  },
+  {
+    "name": "Jump Shot Routine",
+    "skill": "Shooting",
+    "difficulty": "Advanced",
+    "description": "Practice jump shots from mid-range spots.",
+    "duration": "20 minutes"
+  },
+  {
+    "name": "Ball Handling Circuit",
+    "skill": "Dribbling",
+    "difficulty": "Beginner",
+    "description": "Dribble drills using both hands and various speeds.",
+    "duration": "25 minutes"
+  },
+  {
+    "name": "Closeout Drill",
+    "skill": "Defense",
+    "difficulty": "Intermediate",
+    "description": "Practice closing out on shooters quickly and under control.",
+    "duration": "15 minutes"
+  },
+  {
+    "name": "Free Throw Pressure",
+    "skill": "Shooting",
+    "difficulty": "Advanced",
+    "description": "Simulate game pressure during free throws.",
+    "duration": "20 minutes"
+  }
+]
+
