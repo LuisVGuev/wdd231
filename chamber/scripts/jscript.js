@@ -1,9 +1,8 @@
 /* JS */
 document.addEventListener('DOMContentLoaded', () => {
+  // Toggle View (para memberContainer)
   const toggleButton = document.getElementById('toggleView');
   const memberContainer = document.getElementById('memberContainer');
-
-  // Toggle View
   if (toggleButton && memberContainer) {
     toggleButton.addEventListener('click', () => {
       const isGrid = memberContainer.classList.contains('grid-view');
@@ -13,91 +12,79 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Menu
+  // Mobile menu
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
-
   if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
     });
   }
 
-  // Footer
+  // Footer info
   const yearSpan = document.getElementById('year');
   const modifiedSpan = document.getElementById('lastModified');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
   if (modifiedSpan) modifiedSpan.textContent = document.lastModified;
 
-  // Load Members
-  async function loadMembers() {
-    try {
-      const response = await fetch('data/members.json');
-      const members = await response.json();
+  // === DISCOVER PAGE) ===
+  fetch('data/places.json')
+    .then(response => {
+      if (!response.ok) throw new Error("Not charger places.json");
+      return response.json();
+    })
+    .then(data => {
+      const grid = document.querySelector('.cards-grid');
+      if (!grid) return;
 
-      const spotlightContainer = document.getElementById('memberSpotlightContainer');
+      data.forEach(place => {
+        const card = document.createElement('div');
+        card.className = 'card';
 
-      // Charger Members
-      if (memberContainer) {
-        memberContainer.innerHTML = '';
-        const fragment = document.createDocumentFragment();
+        card.innerHTML = `
+          <h2 class="card-title">${place.name}</h2>
+          <figure class="card-image">
+            <img src="${place.image}" alt="Photo of ${place.name}" width="300" height="200" loading="lazy">
+            <figcaption>${place.name}</figcaption>
+          </figure>
+          <p class="card-address">${place.address}</p>
+          <p class="card-desc">${place.description}</p>
+          <button class="card-button">Learn More</button>
+        `;
 
-        members.forEach(member => {
-          const card = document.createElement('div');
-          card.classList.add('member-card');
+        grid.appendChild(card);
+      });
+    })
+    .catch(error => console.error('Error:', error));
 
-          card.innerHTML = `
-            <picture>
-              <source srcset="${member.image}" type="image/jpeg">
-              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
-            </picture>
-            <div class="member-details">
-              <h3>${member.name}</h3>
-              <p>${member.address}</p>
-              <p>${member.phone}</p>
-              <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
-          `;
+    function showVisitMessage() {
+  const messageBox = document.querySelector('.visit-message');
+  if (!messageBox) return;
 
-          fragment.appendChild(card);
-        });
+  const lastVisit = localStorage.getItem('lastVisit');
+  const now = Date.now();
 
-        memberContainer.appendChild(fragment);
-      }
+  if (!lastVisit) {
+    messageBox.textContent = 'Welcome! If you have any questions, let us know.';
+  } else {
+    const timeDiff = now - parseInt(lastVisit, 10);
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-      // Spotlights
-      if (spotlightContainer) {
-        spotlightContainer.innerHTML = '';
-        const spotlightMembers = members.filter(m => m.membership === 'Gold' || m.membership === 'Silver');
-        const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2);
-        const selected = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, howMany);
-
-        selected.forEach((member, index) => {
-          const spotlightCard = document.createElement('div');
-          spotlightCard.classList.add('member-card');
-
-          spotlightCard.innerHTML = `
-            <picture>
-              <source srcset="${member.image}" type="image/jpeg">
-              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
-            </picture>
-            <div class="member-details">
-              <h3>${member.name}</h3>
-              <p>${member.address}</p>
-              <p>${member.phone}</p>
-              <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
-          `;
-          spotlightContainer.appendChild(spotlightCard);
-        });
-      }
-
-    } catch (err) {
-      console.error("Error loading members:", err);
+    if (days < 1) {
+      messageBox.textContent = 'You came back soon! Awesome!';
+    } else if (days === 1) {
+      messageBox.textContent = 'Your last visit was 1 day ago.';
+    } else {
+      messageBox.textContent = `Your last visit was ${days} days ago.`;
     }
   }
 
-  // Weather
+  // Store the current date as the last visit
+  localStorage.setItem('lastVisit', now);
+}
+ showVisitMessage();
+
+  // === WEATHER ===
   async function loadWeather() {
     const apiKey = '38cfffce84bffb7bb11667b3e40f2056';
     const city = 'São Paulo';
@@ -120,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Wind Chill
   function calculateWindChill(temp, speed) {
     if (temp <= 10 && speed > 4.8) {
       const chill = 13.12 + 0.6215 * temp - 11.37 * Math.pow(speed, 0.16) + 0.3965 * temp * Math.pow(speed, 0.16);
@@ -129,52 +115,71 @@ document.addEventListener('DOMContentLoaded', () => {
     return 'N/A';
   }
 
-  // ----------- join.html ------------
-  if (window.location.pathname.includes('join.html')) {
-    const timestampInput = document.getElementById("timestamp");
-    if (timestampInput) {
-      timestampInput.value = new Date().toISOString();
-    }
+  // === MEMBERS ===
+  async function loadMembers() {
+    try {
+      const response = await fetch('data/members.json');
+      const members = await response.json();
+      const spotlightContainer = document.getElementById('memberSpotlightContainer');
 
-    const modalLinks = document.querySelectorAll(".card a");
-    const modals = document.querySelectorAll(".modal");
-    const closeButtons = document.querySelectorAll(".modal .close");
+      if (memberContainer) {
+        memberContainer.innerHTML = '';
+        members.forEach(member => {
+          const card = document.createElement('div');
+          card.classList.add('member-card');
 
-    modalLinks.forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const targetId = link.getAttribute("href").substring(1);
-        const targetModal = document.getElementById(targetId);
-        if (targetModal) {
-          targetModal.classList.add("active");
-          targetModal.querySelector(".close").focus();
-        }
-      });
-    });
-
-    closeButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.closest(".modal").classList.remove("active");
-      });
-    });
-
-    modals.forEach(modal => {
-      modal.addEventListener("click", e => {
-        if (e.target === modal) {
-          modal.classList.remove("active");
-        }
-      });
-    });
-
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape") {
-        modals.forEach(modal => modal.classList.remove("active"));
+          card.innerHTML = `
+            <picture>
+              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
+            </picture>
+            <div class="member-details">
+              <h3>${member.name}</h3>
+              <p>${member.address}</p>
+              <p>${member.phone}</p>
+              <a href="${member.website}" target="_blank">Visit Website</a>
+            </div>
+          `;
+          memberContainer.appendChild(card);
+        });
       }
-    });
+
+      if (spotlightContainer) {
+        const spotlightMembers = members.filter(m => m.membership === 'Gold' || m.membership === 'Silver');
+        const howMany = Math.min(spotlightMembers.length, Math.floor(Math.random() * 2) + 2);
+        const selected = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, howMany);
+
+        selected.forEach(member => {
+          const spotlightCard = document.createElement('div');
+          spotlightCard.classList.add('member-card');
+
+          spotlightCard.innerHTML = `
+            <picture>
+              <img src="${member.image}" alt="${member.name} logo" class="member-image" width="300" height="150" loading="lazy">
+            </picture>
+            <div class="member-details">
+              <h3>${member.name}</h3>
+              <p>${member.address}</p>
+              <p>${member.phone}</p>
+              <a href="${member.website}" target="_blank">Visit Website</a>
+            </div>
+          `;
+          spotlightContainer.appendChild(spotlightCard);
+        });
+      }
+    } catch (err) {
+      console.error("Error loading members:", err);
+    }
   }
 
-  // Load dynamic
+  // === JOIN PAGE ===
+  if (window.location.pathname.includes('join.html')) {
+    const timestampInput = document.getElementById("timestamp");
+    if (timestampInput) timestampInput.value = new Date().toISOString();
+  } 
+  
+  // info
   loadMembers();
   loadWeather();
 });
+
 

@@ -638,3 +638,118 @@ a[aria-current="page"] {
   }
 }
 
+/* discover */
+
+/* === GRID CONTENEDORA DE TODAS LAS TARJETAS === */
+.cards-grid { 
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* === ESTILOS BASE PARA TARJETAS === */
+.card {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "image"
+    "address"
+    "desc"
+    "button";
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+/* === ASIGNACIÓN DE ÁREAS === */
+.card-title {
+  grid-area: title;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-image {
+  grid-area: image;
+}
+
+.card-address {
+  grid-area: address;
+  font-style: normal;
+  color: #555;
+}
+
+.card-desc {
+  grid-area: desc;
+}
+
+.card-button {
+  grid-area: button;
+  padding: 0.5rem 1rem;
+  background-color: #005a8d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-self: start;
+}
+
+/* === IMÁGENES DENTRO DE LA TARJETA === */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* === RESPONSIVE: PANTALLAS PEQUEÑAS (MÓVILES) === */
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* La tarjeta ya está en columna por defecto */
+}
+
+/* === RESPONSIVE: PANTALLAS MEDIANAS (TABLETS) === */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    grid-template-areas:
+      "image image"
+      "title title"
+      "address desc"
+      "button button";
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* === RESPONSIVE: large */
+@media (min-width: 1025px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    grid-template-areas:
+      "image title"
+      "image address"
+      "image desc"
+      "image button";
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+}
+
+.visit-message {
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border-left: 4px solid #005a8d;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #333;
+}

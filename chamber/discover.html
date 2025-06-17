@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+ <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Welcome to the official Taboão Chamber of Commerce home page. Discover local businesses, events, and weather." />
   <meta name="author" content="Luis Ramon Veliz" />
-  <title>Taboão Chamber of Commerce | Home</title>
-  <meta property="og:title" content="Taboão Chamber of Commerce">
-  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão.">
-  <meta property="og:image" content="https://luisvguev.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://luisvguev.github.io/wdd231/chamber/index.html">
+
+  <title>Taboão Chamber of Commerce | Join</title>
+
+  <!-- Facebook Open Graph Meta Tags -->
+  <meta property="og:title" content="Taboão Chamber of Commerce" />
+  <meta property="og:description" content="Discover events, business resources, and community initiatives in Taboão." />
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/join.html" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/styles-large.css" />
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles/normalize.css" />
   <link rel="stylesheet" href="styles/styles-mobile.css" />
+  <link rel="stylesheet" href="styles/styles-large.css" />
 
-  <!-- JavaScript -->
+
+ <!-- JavaScript -->
   <script src="scripts/jscript.js" defer></script>
+
 </head>
 
 <body>
@@ -41,22 +46,31 @@
 
 
   <main>
+<section class="places-of-interest">
+  <h2>Places of Interest in Taboão</h2>
+  <div class="cards-grid">
+    <!-- The cards will be generated dynamically by JS -->
+  </div>
+</section>
 
-    <!-- HERO SECTION -->
+<section class="sidebar">
+  <div class="visit-message"></div>
+</section>
+    <!-- HERO SECTION 
    <section class="hero">
   <div class="hero-content">
     <h1>Empowering Local Businesses</h1>
     <p>Connecting entrepreneurs, fostering innovation, and growing the Taboão community together.</p>
     <a href="join.html" class="btn">Join Us Today</a>
   </div>
-</section>
-
+</section>-->
+<!--
 <section id="memberSpotlightContainer" class="spotlight-section">
   <h2>Company Spotlight</h2>
-</section>
+</section>-->
 
-    <!-- Member Directory Container -->
-    <div id="memberContainer" class="grid-view"></div>
+    <!-- Member Directory Container 
+    <div id="memberContainer" class="grid-view"></div>-->
 
     <!-- Events and Weather -->
     <div class="info-section">
@@ -91,18 +105,19 @@
     </div>
   </main>
 
-  <footer>
+   <footer>
     <div class="footer-socials">
-      <a href="https://www.linkedin.com" target="_blank">
-        <img src="images/linked.png" alt="LinkedIn" />
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+        <img src="images/linked.webp" alt="LinkedIn logo" width="32" height="32" loading="lazy" />
       </a>
-      <a href="https://www.youtube.com" target="_blank">
-        <img src="images/youtube.png" alt="YouTube" />
+      <a href="https://www.youtube.com" target="_blank" rel="noopener">
+        <img src="images/youtube.webp" alt="YouTube logo" width="32" height="32" loading="lazy" />
       </a>
-      <a href="https://twitter.com/" target="_blank">
-        <img src="images/twitter.png" alt="Twitter" />
+      <a href="https://twitter.com/" target="_blank" rel="noopener">
+        <img src="images/twitter.webp" alt="Twitter logo" width="32" height="32" loading="lazy" />
       </a>
     </div>
+
     <p>&copy; <span id="year"></span> Luis Ramon Veliz, Brazil | WDD 231</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>

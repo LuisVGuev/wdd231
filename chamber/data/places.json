@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Parque das Hortênsias",
+    "address": "R. Ângela Mirella, s/n - Parque Assunção, Taboão da Serra - SP",
+    "description": "A beautiful park with green areas, trails, and a small zoo. Ideal for families.",
+    "image": "images/Parque-hortensias.webp"
+  },
+  {
+    "name": "Shopping Taboão",
+    "address": "Rod. Régis Bittencourt, km 271 - Jardim Helena, Taboão da Serra - SP",
+    "description": "Shopping center with stores, a movie theater, and popular restaurants.",
+    "image": "images/Shopping.webp"
+  },
+  {
+    "name": "Municipal Chamber of Taboão da Serra",
+    "address": "Av. Dr. José Maciel, 260 - Jardim Helena, Taboão da Serra - SP",
+    "description": "The local legislative body where key decisions for the municipality are made.",
+    "image": "images/camara-municipal.webp"
+  },
+  {
+    "name": "Zé do Feijão Gymnasium",
+    "address": "Rua Maria Abadia dos Santos, 505 - Jardim Roberto, Taboão da Serra - SP",
+    "description": "Sports center where games and community events are held.",
+    "image": "images/ginasio-ze-feijao.webp"
+  },
+  {
+    "name": "Municipal Museum",
+    "address": "Praça Nicola Vivilechio - Centro, Taboão da Serra - SP",
+    "description": "Local museum showcasing the history and culture of Taboão da Serra.",
+    "image": "images/museu.webp"
+  },
+  {
+    "name": "Nicola Vivilechio Square",
+    "address": "Centro - Taboão da Serra - SP",
+    "description": "Central square where fairs, events, and cultural activities take place.",
+    "image": "images/praca-nicola.webp"
+  },
+  {
+    "name": "Pirajussara General Hospital",
+    "address": "Av. Governador Franco Montoro, 305 - Jardim Celeste, SP",
+    "description": "One of the main medical centers in the region.",
+    "image": "images/hospital.webp"
+  },
+  {
+    "name": "Cecília Meireles Municipal School",
+    "address": "Rua Domingos Tarantino, 99 - Jardim Maria Rosa, Taboão da Serra - SP",
+    "description": "Public school recognized for its excellence in basic education.",
+    "image": "images/escola-cecilia.webp"
+  }
+]
