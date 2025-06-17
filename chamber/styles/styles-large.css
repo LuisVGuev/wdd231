@@ -640,14 +640,14 @@ a[aria-current="page"] {
 
 /* discover */
 
-/* === GRID CONTENEDORA DE TODAS LAS TARJETAS === */
+/* GRID Cards */
 .cards-grid { 
   display: grid;
   gap: 1rem;
   padding: 1rem;
 }
 
-/* === ESTILOS BASE PARA TARJETAS === */
+/* styles cards*/
 .card {
   display: grid;
   grid-template-areas:
@@ -670,7 +670,7 @@ a[aria-current="page"] {
   height: auto;
 }
 
-/* === ASIGNACIÓN DE ÁREAS === */
+/* AREAS  */
 .card-title {
   grid-area: title;
   font-size: 1.25rem;
@@ -702,23 +702,21 @@ a[aria-current="page"] {
   justify-self: start;
 }
 
-/* === IMÁGENES DENTRO DE LA TARJETA === */
+/* Images Cards */
 .card img {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
 
-/* === RESPONSIVE: PANTALLAS PEQUEÑAS (MÓVILES) === */
+/* === RESPONSIVE: large screen (MÓVILES) === */
 @media (max-width: 640px) {
   .cards-grid {
     grid-template-columns: 1fr;
   }
-
-  /* La tarjeta ya está en columna por defecto */
 }
 
-/* === RESPONSIVE: PANTALLAS MEDIANAS (TABLETS) === */
+/* RESPONSIVE: (TABLETS)*/
 @media (min-width: 641px) and (max-width: 1024px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
