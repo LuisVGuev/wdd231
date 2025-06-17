@@ -664,6 +664,12 @@ a[aria-current="page"] {
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
+.card-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* === ASIGNACIÓN DE ÁREAS === */
 .card-title {
   grid-area: title;
