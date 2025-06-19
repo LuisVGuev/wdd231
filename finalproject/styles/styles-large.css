@@ -285,6 +285,16 @@ button:hover, .btn:hover {
   background-color: #ea580c;
 }
 
+a[aria-current="page"] {
+  font-weight: bold;
+  color: #007BFF; 
+  border-bottom: 2px solid #007BFF; 
+  background-color: rgb(77, 136, 199); 
+  padding: 4px 8px; 
+  border-radius: 4px; 
+}
+
+
 /* === Responsive Navigation === */
 @media (max-width: 768px) {
   #nav-links {
@@ -307,3 +317,4 @@ button:hover, .btn:hover {
     display: block;
   }
 }
+
